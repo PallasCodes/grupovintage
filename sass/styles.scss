@@ -1,5 +1,10 @@
 @import 'config';
 @import 'navbar';
+@import 'footer';
+@import 'gallery';
+@import 'music';
+@import 'events';
+@import 'about';
 
 // RESET
 * {
@@ -111,60 +116,5 @@ body {
         p {
             padding: 0 20px;
         }
-    }
-}
-
-footer {
-    background: #0a0a0a;
-    
-    .footer-1,
-    .footer-2 {
-        display: flex;
-    }
-
-    .footer-2 {
-        @include breakpoint(sm){
-            flex-direction: column;
-        }
-    }
-    
-    .wrapper {
-        max-width: 1200px;
-        margin: 0 auto;
-    }
-
-    .contact-icon {
-        display: flex;
-        align-items: center;
-        margin-right: 1rem;
-
-        @include breakpoint(sm){
-            flex-direction: column;
-            margin-top: 1rem;
-        }
-
-        .social-icon{
-            margin-right: 8px;
-        }
-    }
-
-    .social-icon {
-        margin-right: 1rem;
-    }
-
-    .contact-info {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        padding: 30px 0;
-
-        @include breakpoint(sm){
-            flex-direction: column;
-        }
-    }
-
-    #copyright {
-        text-align: center;
-        padding: 30px 0;
     }
 }

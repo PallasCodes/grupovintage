@@ -12,6 +12,10 @@ $background-color: #111;
     max-width: 1200px;
     margin: 0 auto;
     padding: 50px 0;
+
+    @include breakpoint(sm){
+      padding: 50px 20px;   
+    }
 }
 
 @mixin breakpoint($class) {
@@ -55,10 +59,6 @@ $background-color: #111;
         font-weight: 700;
         font-size: 2rem;
         margin-bottom: 30px;
-
-        @include breakpoint(sm) {
-            padding: 0 20px;
-        }
     }
 }
 
@@ -81,4 +81,20 @@ $background-color: #111;
         color: $primary-color;
         transition: color 300ms ease-out;
     }
+}
+
+.page {
+  @include container;
+
+  &__title{
+    font-size: 2rem;
+
+    @include breakpoint(sm){
+      font-size: 1.5rem;
+    }
+
+    &--enfasis{
+      color: $primary-color;
+    }
+  }
 }
