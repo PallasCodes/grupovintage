@@ -1,0 +1,84 @@
+// FONTS
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto&family=Roboto+Slab&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
+
+// COLORS
+$primary-color: #C49D1A;
+$background-color: #111;
+
+// MIXINS
+@mixin container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 50px 0;
+}
+
+@mixin breakpoint($class) {
+    @if $class == xs {
+      @media (min-width: 767px) { @content; }
+    }
+   
+    @else if $class == sm {
+      @media (max-width: 768px) { @content; }
+    }
+   
+    @else if $class == md {
+      @media (max-width: 992px) { @content; }
+    }
+   
+    @else if $class == lg {
+      @media (max-width: 1200px) { @content; }
+    }
+   
+    @else {
+      @warn "Breakpoint mixin supports: xs, sm, md, lg";
+    }
+  }
+
+  @mixin double-col-md {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    align-items: center;
+    
+    @include breakpoint(sm) {
+        padding: 0 20px;
+    }
+}
+
+// BASIC STYLES
+.section {
+    @include container;
+
+    &__title {
+        color: $primary-color;
+        font-weight: 700;
+        font-size: 2rem;
+        margin-bottom: 30px;
+
+        @include breakpoint(sm) {
+            padding: 0 20px;
+        }
+    }
+}
+
+.light {
+    background: #fff;
+    color: #222;
+}
+
+.img-fluid {
+    width: 100%;
+    height: auto;
+}
+
+.social-icon {
+    font-size: 42px;
+    color: #eee;
+    margin-right: 0.5rem;
+
+    &:hover {
+        color: $primary-color;
+        transition: color 300ms ease-out;
+    }
+}

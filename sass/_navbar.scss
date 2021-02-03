@@ -1,0 +1,64 @@
+@import 'config';
+
+.nav {
+    display: flex;
+    flex-wrap: wrap;
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1rem 0;
+
+    #nav-btn {
+        display: none;
+
+        @include breakpoint(sm){
+            display: block;
+        }
+    }
+
+    #brand-name {
+        text-decoration: none;
+        color: $primary-color;
+        font-size: 64px;
+        font-family: 'Roboto Slab', serif;
+        font-weight: 600;
+
+        @include breakpoint(sm) {
+            font-size: 2.5rem;
+        }
+
+        @include breakpoint(md) {
+            font-size: 2.75rem;
+        }
+    }
+
+    &__list {
+        display: flex;
+        list-style: none;
+
+        a {
+            text-decoration: none;
+            color: #f2f2f2;
+            margin-left: 36px;
+
+            &:hover {
+                color: #fff;
+                border-bottom: 2px solid #fff;
+                transition: color 300ms ease;
+            }
+        }
+
+        @include breakpoint(sm){
+            display: none;
+            width: 100%;
+            flex-direction: column;
+        }
+
+    }
+
+    &__list.dropped {
+        display: flex;
+    }
+}
